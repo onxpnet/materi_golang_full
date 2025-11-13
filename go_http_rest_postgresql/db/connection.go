@@ -1,10 +1,12 @@
 package db
+
 import (
 	"database/sql"
-	_ "github.com/lib/pq"
-	"esdm/env"
-	"fmt"
 	"log"
+
+	"esdm/env"
+
+	_ "github.com/lib/pq"
 )
 
 var DB *sql.DB
@@ -15,13 +17,12 @@ func Init() {
 
 	var err error
 	DB, err = sql.Open("postgres", connection_string)
-	
 	if err != nil {
 		panic(err)
 	}
-	
+
 	if err = DB.Ping(); err != nil {
 		log.Fatal("Database not reachable:", err)
 	}
-	//defer DB.Close()
+	// defer DB.Close()
 }

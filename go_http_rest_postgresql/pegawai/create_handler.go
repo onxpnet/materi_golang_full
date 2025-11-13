@@ -2,9 +2,10 @@ package pegawai
 
 import (
 	"encoding/json"
-	"net/http"
-	"esdm/db"
 	"fmt"
+	"net/http"
+
+	"esdm/db"
 )
 
 // POST /pegawai
@@ -31,5 +32,3 @@ func Create(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(p)
 }
-
-
