@@ -6,5 +6,3 @@ type Pegawai struct {
 	Jabatan string `json:"jabatan"`
 }
 
-var PegawaiDB []Pegawai
-var NextID = 1

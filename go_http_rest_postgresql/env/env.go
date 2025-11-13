@@ -1,4 +1,4 @@
-package main
+package env
 
 import (
 	"bufio"
@@ -9,8 +9,8 @@ import (
 
 var envCache map[string]string
 
-// loadEnvFile reads .env once and stores it in envCache.
-func loadEnvFile(filename string) {
+// LoadEnvFile reads .env once and stores it in envCache.
+func LoadEnvFile(filename string) {
 	envCache = make(map[string]string)
 	file, err := os.Open(filename)
 	if err != nil {
