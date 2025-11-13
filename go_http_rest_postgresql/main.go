@@ -15,10 +15,10 @@ func main() {
 			pegawai.Get(w, r)
 		case http.MethodPost:
 			pegawai.Create(w, r)
-		//case http.MethodPut:
-		//	pegawai.Update(w, r)
-		//case http.MethodDelete:
-		//	pegawai.Delete(w, r)
+		case http.MethodPut:
+			pegawai.Update(w, r)
+		case http.MethodDelete:
+			pegawai.Delete(w, r)
 		default:
 			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		}
