@@ -12,12 +12,14 @@ var DB *sql.DB
 func Init() {
 	env.LoadEnvFile(".env")
 	connection_string := env.GetEnv("DATABASE_URL", "")
-	fmt.Println(connection_string)
+
 	var err error
 	DB, err = sql.Open("postgres", connection_string)
+	
 	if err != nil {
 		panic(err)
 	}
+	
 	if err = DB.Ping(); err != nil {
 		log.Fatal("Database not reachable:", err)
 	}
